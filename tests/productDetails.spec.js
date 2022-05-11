@@ -39,7 +39,10 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(typeof resultado[0]).toBe('object');
     expect(typeof resultado[1]).toBe('object');
     expect(resultado[1]).not.toBe(resultado[0]);
-    expect(resultado[0]).toHaveProperty('productId','a123');
+    const chaveProductId1 = resultado[0].details.productId;
+    const chaveProductId2 = resultado[1].details.productId;
+    expect(chaveProductId1).toMatch('123');
+    expect(chaveProductId2).toMatch('123');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se productDetails é uma função.
     // Teste se o retorno da função é um array.
