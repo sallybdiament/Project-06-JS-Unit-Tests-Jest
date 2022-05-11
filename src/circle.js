@@ -17,6 +17,7 @@
         Outra dica: que tal pesquisar se existe um matcher que compara valores próximos?
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
+console.log(parseFloat((0.2 + 0.1).toPrecision(2)));
 
 const circle = (radius) => {
   const PI = 3.14;
@@ -25,13 +26,13 @@ const circle = (radius) => {
 
   return {
     radius,
-    area: PI * radius * radius,
-    circumference: 2 * PI * radius,
+    area: parseFloat((PI * radius * radius).toPrecision(4)),
+    circumference: parseFloat((2 * PI * radius).toPrecision(4)),
   };
 };
 
 console.log(circle(3));
-const areaCircle = circle.area;
-console.log(areaCircle);
+const raio3 = circle(3);
+console.log(raio3.area);
 
 module.exports = circle;
