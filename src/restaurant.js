@@ -93,14 +93,46 @@
 // - retornará o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = (objeto) => {
-  const clone = { };
-  const novoObjeto = {
-    fetchMenu: Object.assign(clone, objeto),
-  };
-  return novoObjeto;
-};
+// const createMenu = (objeto) => ({ fetchMenu: () => objeto });
+const createMenu = (objeto) => ({ 
+  fetchMenu: () => objeto,
+  consumption: [],
+  // order: funcaoOrder(),
+  // pay: funcaoPay(),
+});
 
-console.log(createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } }));
+
+// const objetoCreatMenu = createMenu(objeto);
+// const funcaoOrder = (string) => ([string.push]);
+
+// const funcaoPay = 
+
+
+//   const clone = { };
+//   const novoObjeto = {
+//     fetchMenu: Object.assign(clone, objeto),
+//   };
+//   // console.log(typeof novoObjeto);
+//   return novoObjeto;
+// };
+
+// console.log(createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } }));
+const objCreateMenu = createMenu({
+  food: { coxinha: 3.90, sanduiche: 9.90 },
+  drinks: { agua: 3.90, cerveja: 6.90 },
+});
+const objFechMenu = objCreateMenu.fetchMenu();
+console.log(objFechMenu);
+
+console.log(createMenu({
+  food: { coxinha: 3.90, sanduiche: 9.90 },
+  drinks: { agua: 3.90, cerveja: 6.90 },
+}).fetchMenu());
+
+// const consumption = { consumption: [] };
+// const copiaComConsumption = Object.assign(createMenu(), consumption);
+// console.log(copiaComConsumption);
+// const arrayConsumption = copiaComConsumption.consumption;
+// console.log(arrayConsumption);
 
 module.exports = createMenu;
