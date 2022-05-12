@@ -97,7 +97,7 @@
 const createMenu = (objeto) => ({ 
   fetchMenu: () => objeto,
   consumption: [],
-  // order: funcaoOrder(),
+  // order: (string) => (createMenu().consumption.push(string)),
   // pay: funcaoPay(),
 });
 
@@ -119,6 +119,10 @@ const consumption1 = createMenu({
 }).consumption;
 
 console.log(consumption1);
+
+const valorDaChaveOrder = createMenu().order();
+
+console.log(valorDaChaveOrder);
 
 // const consumption = { consumption: [] };
 // const copiaComConsumption = Object.assign(createMenu(), consumption);
