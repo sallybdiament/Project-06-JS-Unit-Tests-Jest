@@ -71,10 +71,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
    
-    const objFetchMenu = objCreateMenu.fetchMenu;
+    const objFetchMenu = objCreateMenu.fetchMenu();
     // expect(objFetchMenu).toHaveProperty(['food', 'drinks']);
-    // expect(objFetchMenu).toHaveProperty('food');
-    // expect(objFetchMenu).toHaveProperty('drinks');
+    expect(objFetchMenu).toHaveProperty('food');
+    expect(objFetchMenu).toHaveProperty('drinks');
    
     // TESTE 3: Verifique se o menu passado pra função createMenu() é idêntico ao menu recuperado pela função 'objetoRetornado.fetchMenu()'
     // ```
@@ -82,10 +82,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
     
-    // expect(objFetchMenu).toEqual({
-    //   food: { coxinha: 3.9, sanduiche: 9.9 },
-    //   drinks: { agua: 3.9, cerveja: 6.9 }
-    // });
+    expect(objFetchMenu).toEqual({
+      food: { coxinha: 3.9, sanduiche: 9.9 },
+      drinks: { agua: 3.9, cerveja: 6.9 }
+    });
 
 
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
@@ -97,7 +97,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.consumption // Retorno: []
     // ```
 const arrayConsumption = objCreateMenu.consumption;
-expect(arrayConsumption).toBeUndefinied();
+expect(arrayConsumption).toEqual([]);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
 

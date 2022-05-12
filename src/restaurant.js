@@ -101,22 +101,6 @@ const createMenu = (objeto) => ({
   // pay: funcaoPay(),
 });
 
-
-// const objetoCreatMenu = createMenu(objeto);
-// const funcaoOrder = (string) => ([string.push]);
-
-// const funcaoPay = 
-
-
-//   const clone = { };
-//   const novoObjeto = {
-//     fetchMenu: Object.assign(clone, objeto),
-//   };
-//   // console.log(typeof novoObjeto);
-//   return novoObjeto;
-// };
-
-// console.log(createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } }));
 const objCreateMenu = createMenu({
   food: { coxinha: 3.90, sanduiche: 9.90 },
   drinks: { agua: 3.90, cerveja: 6.90 },
@@ -128,6 +112,13 @@ console.log(createMenu({
   food: { coxinha: 3.90, sanduiche: 9.90 },
   drinks: { agua: 3.90, cerveja: 6.90 },
 }).fetchMenu());
+
+const consumption1 = createMenu({
+  food: { coxinha: 3.90, sanduiche: 9.90 },
+  drinks: { agua: 3.90, cerveja: 6.90 },
+}).consumption;
+
+console.log(consumption1);
 
 // const consumption = { consumption: [] };
 // const copiaComConsumption = Object.assign(createMenu(), consumption);
