@@ -54,7 +54,17 @@ const createMenu = require('../src/restaurant');
 
 describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
+    const objCreateMenu = createMenu({
+      food: {'coxinha': 3.90, 'sanduiche': 9.90},
+      drinks: {'agua': 3.90, 'cerveja': 6.90}
+    });
+    expect(typeof objCreateMenu.fetchMenu).toBe('function');
+    expect(objCreateMenu.fetchMenu).toHaveProperty('food', 'drink');
+    expect(objCreateMenu.fetchMenu).toBe({
+      food: {'coxinha': 3.90, 'sanduiche': 9.90} ,
+      drinks: {'agua': 3.90, 'cerveja': 6.90}
+    })
+
     // TESTE 1: Verifique se função `createMenu()` retorna um objeto que possui a chave `fetchMenu`, a qual tem como valor uma função.
     // ```
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
